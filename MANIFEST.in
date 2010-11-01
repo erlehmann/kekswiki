@@ -1,0 +1,3 @@
+include kekswiki/config/deployment.ini_tmpl
+recursive-include kekswiki/public *
+recursive-include kekswiki/templates *
