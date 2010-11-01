@@ -4,16 +4,5 @@ you would include information such as the information below:
 Installation and Setup
 ======================
 
-Install ``kekswiki`` using easy_install::
-
-    easy_install kekswiki
-
-Make a config file as follows::
-
-    paster make-config kekswiki config.ini
-
-Tweak the config file as appropriate and then setup the application::
-
-    paster setup-app config.ini
-
-Then you are ready to go.
+    paster setup-app development.ini
+    paster serve --reload development.ini
