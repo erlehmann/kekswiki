@@ -19,10 +19,25 @@ class ArticleController(BaseController):
         return render('/article.mako')
 
     def commit(self, title):
-        pass
+        new_content = request.POST['article-text']
+        if new_content[-1] != '\n':
+            new_content += '\n'
+
+        author = request.POST['author-name']
+
+        email = request.POST['author-email']
+        # FIXME: sanitize email
+
+        message = request.POST['message']
+
+        article = Article(title)
+        article.update_content(new_content, author, email, message)
+
+        h.redirect(h.url_for('index'))
 
     def edit(self, title):
         article = Article(title)
+
         c.title = article.get_title()
         c.content = article.get_content()
         return render('/article-edit.mako')

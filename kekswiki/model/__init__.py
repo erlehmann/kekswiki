@@ -1,5 +1,6 @@
 from dulwich.repo import Repo
 from dulwich.objects import Blob, Tree, Commit, parse_timezone
+from time import time
 
 class Article(object):
     def __init__(self, title):
@@ -25,9 +26,8 @@ class Article(object):
         return self.title
 
     def update_content(self, new_content, author, email, message):
-        # create blob, add to tree
-        #blob = Blob.from_string(new_content)
-        blob = Blob.from_string('lalala')
+        # create blob, add to existing tree
+        blob = Blob.from_string(str(new_content))
         self.tree[self.title] = (0100644, blob.id)
 
         # commit
@@ -44,10 +44,10 @@ class Article(object):
         # save everything
         object_store = self.repo.object_store
         object_store.add_object(blob)
-        object_store.add_object(tree)
+        object_store.add_object(self.tree)
         object_store.add_object(commit)
 
-        repo.refs['refs/heads/master'] = commit.id
+        self.repo.refs['refs/heads/master'] = commit.id
 
     def update_title(self, new_title):
         pass

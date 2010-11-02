@@ -6,9 +6,7 @@ available to Controllers. This module is available to templates as 'h'.
 # Import helpers as desired, or define your own, ie:
 #from webhelpers.html.tags import checkbox, password
 
-#from webhelpers.html.tags import link_to
-from pylons.controllers.util import url_for
-
+from pylons.controllers.util import url_for, redirect
 from webhelpers.html.tags import form, end_form, submit
 
 # adapted from http://code.google.com/p/soclone/source/browse/trunk/soclone/utils/html.py
