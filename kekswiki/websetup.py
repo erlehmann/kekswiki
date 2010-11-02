@@ -56,9 +56,5 @@ def setup_app(command, conf, vars):
     object_store.add_object(commit)
 
     # create master branch, set it as current
-    #repo.refs['refs/heads/master'] = commit.id
     repo.refs.add_if_new('refs/heads/master', commit.id)
-    print repo.refs['refs/heads/master']
-    #repo.refs['HEAD'] = 'ref: refs/heads/master'
     repo.refs.set_symbolic_ref('HEAD', 'refs/heads/master')
-    print repo.refs['HEAD']
