@@ -25,8 +25,11 @@ class ArticleController(BaseController):
 
         author = request.POST['author-name']
 
-        email = request.POST['author-email']
-        # FIXME: sanitize email
+        try:
+            e = h.Email(resolve_domain=True)
+            email = e.to_python(request.POST['author-email'])
+        except h.Invalid as i:
+            return i
 
         message = request.POST['message']
 

@@ -9,6 +9,8 @@ available to Controllers. This module is available to templates as 'h'.
 from pylons.controllers.util import url_for, redirect
 from webhelpers.html.tags import form, end_form, submit
 
+from formencode.validators import Email, Invalid
+
 # adapted from http://code.google.com/p/soclone/source/browse/trunk/soclone/utils/html.py
 
 import html5lib
