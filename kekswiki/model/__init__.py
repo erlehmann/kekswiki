@@ -4,7 +4,7 @@ from time import time
 
 class Article(object):
     def __init__(self, title):
-        self.title = str(title)
+        self.title =  title.encode('UTF-8')
         self.repo = Repo("wiki")
 
         self.head = self.repo.get_object(self.repo.head())
@@ -26,8 +26,13 @@ class Article(object):
         return self.title
 
     def update_content(self, new_content, author, email, message):
+        new_content = new_content.encode('UTF-8')
+        author = author.encode('UTF-8')
+        message = message.encode('UTF-8')
+        email = email.encode('UTF-8')
+
         # create blob, add to existing tree
-        blob = Blob.from_string(str(new_content))
+        blob = Blob.from_string(new_content)
         self.tree[self.title] = (0100644, blob.id)
 
         # commit
