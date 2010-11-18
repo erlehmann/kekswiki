@@ -1,5 +1,10 @@
-This file is for you to describe the kekswiki application. Typically
-you would include information such as the information below:
+Prerequisites
+=============
+
+Kekswiki requires [Pylons][1] and [Dulwich][2]. On a Debian-based system you can get both by issuing the following command as root:
+
+    apt-get install python-pylons python-dulwich
+
 
 Installation and Setup
 ======================
@@ -8,3 +13,8 @@ Installation and Setup
     paster serve --reload development.ini
 
 Caution: Always set “debug = false” in configuration files for production sites and make sure your users do to.
+
+
+[1]: http://pylonshq.com/
+
+[2]: http://samba.org/~jelmer/dulwich/
