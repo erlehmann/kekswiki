@@ -31,7 +31,7 @@ class HTMLSanitizerMixin(sanitizer.HTMLSanitizerMixin):
     )
 
     acceptable_attributes = (
-        'id', 'title', 'lang'               # global
+        'id', 'title', 'lang',               # global
         'href', 'rel',                      # hyperlinks
         'datetime', 'pubdate',              # date
         'alt', 'src', 'controls',           # embedded content
