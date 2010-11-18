@@ -20,6 +20,7 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
 
+    map.connect('/', controller='frontpage', action='index')
     map.connect('/:title', controller='article', action='index')
     map.connect('/:title/:action', controller='article')
 

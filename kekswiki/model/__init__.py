@@ -56,3 +56,12 @@ class Article(object):
 
     def update_title(self, new_title):
         pass
+
+class ArticleList(object):
+    def __init__(self):
+        self.repo = Repo('wiki')
+        self.head = self.repo.get_object(self.repo.head())
+        self.tree = self.repo.get_object(self.head.tree)
+
+    def get_article_titles(self):
+        return [a for a in self.tree]
