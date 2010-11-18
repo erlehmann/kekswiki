@@ -15,6 +15,14 @@ Installation and Setup
 Caution: Always set “debug = false” in configuration files for production sites and make sure your users do to.
 
 
+Testing
+=======
+
+A rudimentary set of unit tests is available. Try it with:
+
+    nosetests --with-pylons=test.ini
+
+
 [1]: http://pylonshq.com/
 
 [2]: http://samba.org/~jelmer/dulwich/
