@@ -71,6 +71,10 @@ p, textarea, input {
     width: 100%;
 }
 
+ol, ul {
+    margin: 0 1em;
+}
+
 button, input, textarea {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
