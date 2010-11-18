@@ -14,7 +14,7 @@ class Article(object):
             sha = self.tree[self.title][1]
             self.content = self.repo[sha].data
         except KeyError:
-            self.content = u'Hier koennte ihre Werbung stehen.'
+            self.content = u'This space intentionally left blank.'
 
     def __str__(self):
         return self.title
