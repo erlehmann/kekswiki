@@ -5,7 +5,7 @@ from time import time
 class Article(object):
     def __init__(self, title):
         self.title =  title.encode('UTF-8')
-        self.repo = Repo("wiki")
+        self.repo = Repo('wiki')
 
         self.head = self.repo.get_object(self.repo.head())
         self.tree = self.repo.get_object(self.head.tree)
@@ -43,7 +43,7 @@ class Article(object):
         commit.commit_time = commit.author_time = int(time())
         tz = parse_timezone('+0100')[0]  # FIXME: get proper timezone
         commit.commit_timezone = commit.author_timezone = tz
-        commit.encoding = "UTF-8"
+        commit.encoding = 'UTF-8'
         commit.message = message
 
         # save everything
