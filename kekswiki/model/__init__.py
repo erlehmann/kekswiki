@@ -4,7 +4,7 @@ from time import time
 
 class Article(object):
     def __init__(self, title):
-        self.title = title
+        self.title = str(title)
         self.repo = Repo("wiki")
 
         self.head = self.repo.get_object(self.repo.head())
