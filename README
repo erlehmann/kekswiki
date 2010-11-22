@@ -1,9 +1,9 @@
 Prerequisites
 =============
 
-Kekswiki requires [Pylons][1] and [Dulwich][2]. On a Debian-based system you can get both by issuing the following command as root:
+Kekswiki requires [Pylons][1], [Dulwich][2] and [html5lib][3]. On a Debian-based system you can get all of these by issuing the following command as root:
 
-    apt-get install python-pylons python-dulwich
+    apt-get install python-pylons python-dulwich python-html5lib
 
 
 Installation and Setup
@@ -26,3 +26,5 @@ A rudimentary set of unit tests is available. Try it with:
 [1]: http://pylonshq.com/
 
 [2]: http://samba.org/~jelmer/dulwich/
+
+[3]: http://code.google.com/p/html5lib/
