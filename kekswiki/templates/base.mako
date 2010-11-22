@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>Kekswiki</title>
-<link rel="stylesheet" href="/html5-reset.css">
-<link rel="stylesheet" href="/keks.css">
+<link rel="stylesheet" href="${h.url_for('/html5-reset.css')}">
+<link rel="stylesheet" href="${h.url_for('/keks.css')}">
 ${next.body()}
 <footer>
     <p>
