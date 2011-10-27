@@ -6,7 +6,8 @@ available to Controllers. This module is available to templates as 'h'.
 # Import helpers as desired, or define your own, ie:
 #from webhelpers.html.tags import checkbox, password
 
-from pylons.controllers.util import url_for, redirect
+from routes import url_for
+from pylons.controllers.util import redirect
 from webhelpers.html.tags import form, end_form, submit
 
 from formencode.validators import Email, Invalid
